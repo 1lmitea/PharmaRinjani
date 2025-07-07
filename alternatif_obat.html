@@ -2,14 +2,13 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alternatif Obat Herbal</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-/* Hover untuk link navbar */
     .navbar-nav .nav-link:hover {
-      color: #FFD700 !important;  /* warna hover*/
+      color: #FFD700 !important;  /* warna hover,kuning emas */
       text-decoration: underline; 
     }
 
@@ -18,327 +17,376 @@
       background-color: #065444 !important;  /* warna saat hover */
       color: white !important;
     }
-
-    .card-obat {
-      padding: 25px;
-      font-size: 1.1rem;
-    }
-
-    .card-obat img {
-      width: 220px;
-      height: 140px;
+    .card-img-top {
       object-fit: cover;
+      height: 200px;
+      width: 100%;
+      border-top-left-radius: 0.375rem;
+      border-top-right-radius: 0.375rem;
     }
-
-    @media (max-width: 768px) {
-      .card-obat {
-        flex-direction: column !important;
-        text-align: center;
+    .card-content {
+      display: none;
+      margin-top: 15px;
+    }
+    @media (min-width: 768px) {
+      .card-horizontal {
+        display: flex;
         align-items: center;
       }
-
-      .card-obat img {
-        margin-bottom: 15px;
+      .card-horizontal img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        margin-right: 20px;
+        border-radius: 0.375rem;
       }
     }
   </style>
 </head>
-
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar navbar-expand-lg" style="background-color: #2A8A81; font-family: 'Minion Variable Concept';">
-      <div class="container-fluid">
-        <a class="navbar-brand">
-          <img src="logo putih.png" alt="logo rinjani" width="80" height="30">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item me-5">
-              <a class="nav-link text-white active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item me-5">
-              <a class="nav-link text-white" href="info-obat.html">Info Obat</a>
-            </li>
-            <li class="nav-item me-5">
-              <a class="nav-link text-white" href="edukasi.html">Edukasi</a>
-            </li>
-            <li class="nav-item me-5">
-              <a class="nav-link text-white" href="alternatif_obat.html">Alternatif Obat</a>
-            </li>
-          </ul>
-          <a href="tentangkami.html" class="btn text-white me-5" style="background-color: #093330;">Tentang Kami</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-<!-- Konten -->
-<div class="container my-5">
-  <h2 class="mb-4">Daftar Obat Herbal</h2>
-
-  <!-- CARD 1 -->
-  <div class="mb-4 border rounded card-obat">
-    <div class="d-flex flex-md-row flex-column">
-      <img src="jahe madu.png" class="me-4 rounded" alt="Herbal A">
-      <div>
-        <h5>Jahe Madu</h5>
-        <p>Keluhan: Masalah Pencernaan</p>
-        <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#detail1">Lihat Selengkapnya</button>
+    <header>
+  <nav class="navbar navbar-expand-lg" style="background-color: #2A8A81; font-family: Minion Variable Concept" data-bs-theme="light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo putih.png" alt="logo rinjani" width="80" height="30">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item me-5">
+            <a class="nav-link text-white active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item me-5">
+            <a class="nav-link text-white" href="informasi_obat.html">Info Obat</a>
+          </li>
+          <li class="nav-item me-5">
+            <a class="nav-link text-white" href="edukasi.html">Edukasi</a>
+          </li>
+          <li class="nav-item me-5">
+            <a class="nav-link text-white" href="alternatif_obat.html">Alternatif Obat</a>
+          </li>
+        </ul>    
+        <a href="tentangkami.html" class="btn text-white me-5" style="background-color: #093330;">Tentang Kami</a>
       </div>
     </div>
-    <div class="collapse mt-3" id="detail1">
-      <div class="border rounded p-3">
- <strong>Bahan:</strong>
-      <ul>
+  </nav>
+</header>
+
+<div class="container py-4">
+
+  <!-- CARD 1 -->
+  <div class="card p-3 mb-4">
+    <img src="jahe madu.png" alt="Jahe Madu" class="card-img-top d-md-none rounded">
+    <div class="card-horizontal d-none d-md-flex">
+      <img src="jahe madu.png" alt="Jahe Madu">
+      <div>
+        <h5 class="mb-1">Jahe Madu</h5>
+        <p class="mb-2">Keluhan: Masalah Pencernaan</p>
+        <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
+      </div>
+    </div>
+    <div class="d-md-none text-center mt-3">
+      <h5 class="mb-1">Jahe Madu</h5>
+      <p>Keluhan: Masalah Pencernaan</p>
+      <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
+    </div>
+    <div class="card-content border rounded p-3 mt-3">
+      <p class="mb-1"><strong>Bahan:</strong></p>
+      <ul class="mb-2">
         <li>1 sdt jahe parut segar</li>
         <li>1 sdt madu murni</li>
         <li>200 ml air hangat</li>
       </ul>
-      <strong>Cara membuat:</strong>
-      <p>Campurkan jahe parut ke dalam air hangat, diamkan 5 menit. Tambahkan madu setelah hangat, aduk rata, lalu minum.</p>
-      <strong>Khasiat:</strong>
+      <p class="mb-1"><strong>Cara membuat:</strong><br>
+      Campurkan jahe parut ke dalam air hangat, diamkan 5 menit. Tambahkan madu setelah hangat, aduk rata, lalu minum.
+      </p>
+      <p class="mb-1"><strong>Khasiat:</strong></p>
       <ul>
         <li>Mengatasi perut kembung dan mual</li>
         <li>Memperbaiki metabolisme dan pencernaan</li>
         <li>Membantu meredakan gejala maag ringan</li>
       </ul>
-      <strong>Cara konsumsi:</strong>
-      <p>Diminum pagi saat perut kosong atau malam sebelum tidur.</p>
-      <strong>Catatan:</strong>
-      <p>Hindari untuk penderita maag berat tanpa pengawasan medis.</p>
+      <p class="mb-1"><strong>Cara konsumsi:</strong><br>
+      Diminum pagi saat perut kosong atau malam sebelum tidur.
+      </p>
+       <p class="mb-1"><strong>Catatan:</strong><br>
+     Hindari untuk penderita maag berat tanpa pengawasan medis.
+      </p>
     </div>
   </div>
-</div>
 
   <!-- CARD 2 -->
-  <div class="mb-4 border rounded card-obat">
-    <div class="d-flex flex-md-row flex-column">
-      <img src="jeruknutrisari.png" class="me-4 rounded" alt="Herbal B">
+  <div class="card p-3 mb-4">
+    <img src="jeruknutrisari.png" alt="Jeruk Peras" class="card-img-top d-md-none rounded">
+    <div class="card-horizontal d-none d-md-flex">
+      <img src="jeruknutrisari.png" alt="Jeruk Peras">
       <div>
-        <h5>Madu Jeruk Peras</h5>
-        <p>Keluhan: Batuk dan Pilek</p>
-        <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#detail2">Lihat Selengkapnya</button>
+        <h5 class="mb-1">Madu Jeruk Peras</h5>
+        <p class="mb-2">Keluhan: Batuk & Tenggorokan Gatal</p>
+        <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
       </div>
     </div>
-    <div class="collapse mt-3" id="detail2">
-      <div class="border rounded p-3">
-        <strong>Bahan:</strong>
-      <ul>
-        <li>1 sdt perasan jeruk nipis segar</li>
-        <li>1 sdt madu murni</li>
-        <li>Air hangat secukupnya</li>
+    <div class="d-md-none text-center mt-3">
+      <h5 class="mb-1">Madu Jeruk Peras</h5>
+      <p>Keluhan: Batuk & Tenggorokan Gatal</p>
+      <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
+    </div>
+    <div class="card-content border rounded p-3 mt-3">
+      <p class="mb-1"><strong>Bahan:</strong></p>
+      <ul class="mb-2">
+        <li>2 sdm air perasan jeruk nipis</li>
+        <li>1 sdm madu murni</li>
+        <li>100 ml air hangat</li>
       </ul>
-      <strong>Cara membuat:</strong>
-      <p>Campurkan semua bahan dalam gelas, aduk rata hingga madu larut. Konsumsi saat hangat.</p>
-      <strong>Khasiat:</strong>
+      <p class="mb-1"><strong>Cara membuat:</strong><br>
+       larutkan madu dengan air hangat kemudian masukan air perasan jeruk nipis kedalam gelas, aduk rata. minum selagi hangat. 
+      </p>
+      <p class="mb-1"><strong>Khasiat:</strong></p>
       <ul>
-        <li>Meredakan batuk berdahak dan tenggorokan gatal</li>
-        <li>Memiliki efek antimikroba dan antioksidan</li>
-        <li>Meningkatkan imunitas tubuh</li>
+        <li>Meredakan batuk dan tenggorokan kering</li>
+        <li>Meningkatkan daya tahan tubuh</li>
       </ul>
-      <strong>Cara konsumsi:</strong>
-      <p>Diminum 2x sehari setelah makan.</p>
-      <strong>Catatan:</strong>
-      <p>Jangan diberikan pada anak di bawah 1 tahun. Hindari konsumsi berlebih jika asam lambung sedang naik.</p>
+      <p class="mb-1"><strong>Cara konsumsi:</strong><br>
+       Diminum 2x sehari setelah makan 
+      </p>
+      <p class="mb-1"><strong>Catatan:</strong><br>
+       Jangan diberikan pada anak di bawah 1 tahun. Hindari konsumsi berlebih jika asam lambung sedang naik.
+      </p>
     </div>
   </div>
-</div>
 
-  <!-- CARD 3 -->
-  <div class="mb-4 border rounded card-obat">
-    <div class="d-flex flex-md-row flex-column">
-      <img src="minyak kayu putih.png" class="me-4 rounded" alt="Herbal C">
+   <!-- CARD 3 -->
+  <div class="card p-3 mb-4">
+    <img src="minyak kayu putih.png" alt="Jeruk Peras" class="card-img-top d-md-none rounded">
+    <div class="card-horizontal d-none d-md-flex">
+      <img src="minyak kayu putih.png" alt="Jeruk Peras">
       <div>
-        <h5>Kompress Kepala</h5>
-        <p>Keluhan: Sakit Kepala</p>
-        <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#detail3">Lihat Selengkapnya</button>
+        <h5 class="mb-1">Kompres Kepala</h5>
+        <p class="mb-2">Keluhan: Sakit Kepala(pusing)</p>
+        <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
       </div>
     </div>
-    <div class="collapse mt-3" id="detail3">
-      <div class="border rounded p-3">
-        <strong>Bahan:</strong>
-      <ul>
+    <div class="d-md-none text-center mt-3">
+      <h5 class="mb-1">Kompres Kepala</h5>
+      <p>Keluhan: Sakit Kepala(pusing)</p>
+      <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
+    </div>
+    <div class="card-content border rounded p-3 mt-3">
+      <p class="mb-1"><strong>Bahan:</strong></p>
+      <ul class="mb-2">
         <li>Minyak kayu putih secukupnya</li>
         <li>Air hangat dan kain bersih untuk kompres</li>
       </ul>
-      <strong>Cara membuat:</strong>
-      <p>Rendam kain dalam air hangat, peras, lalu tempelkan pada dahi. Oleskan minyak kayu putih di pelipis dan tengkuk sambil dipijat perlahan.</p>
-      <strong>Khasiat:</strong>
+      <p class="mb-1"><strong>Cara membuat:</strong><br>
+       Rendam kain dalam air hangat, peras, lalu tempelkan pada dahi. Oleskan minyak kayu putih di pelipis dan tengkuk sambil dipijat perlahan.
+      </p>
+      <p class="mb-1"><strong>Khasiat:</strong></p>
       <ul>
         <li>Meredakan ketegangan otot kepala</li>
         <li>Melancarkan peredaran darah di sekitar kepala dan leher</li>
         <li>Mengurangi pusing karena kelelahan atau flu</li>
       </ul>
-      <strong>Cara penggunaan:</strong>
-      <p>Lakukan saat gejala muncul. Ulangi 2–3 kali sehari bila perlu.</p>
-      <strong>Catatan:</strong>
-      <p>Hindari penggunaan berlebihan di dekat mata. Jangan gunakan jika kulit iritasi.</p>
+      <p class="mb-1"><strong>Cara konsumsi:</strong><br>
+      Lakukan saat gejala muncul. Ulangi 2–3 kali sehari bila perlu. 
+      </p>
+      <p class="mb-1"><strong>Catatan:</strong><br>
+       Hindari penggunaan berlebihan di dekat mata. Jangan gunakan jika kulit iritasi.
+      </p>
     </div>
   </div>
-</div>
 
   <!-- CARD 4 -->
-  <div class="mb-4 border rounded card-obat">
-    <div class="d-flex flex-md-row flex-column">
-      <img src="daun salam.png" class="me-4 rounded" alt="Herbal D">
+  <div class="card p-3 mb-4">
+    <img src="teh jahe.png" alt="Jeruk Peras" class="card-img-top d-md-none rounded">
+    <div class="card-horizontal d-none d-md-flex">
+      <img src="teh jahe.png" alt="Jeruk Peras">
       <div>
-        <h5>Rebusan Daun Salam</h5>
-        <p>Keluhan: Pegal-pegal</p>
-        <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#detail4">Lihat Selengkapnya</button>
+        <h5 class="mb-1">Wedang Jahe</h5>
+        <p class="mb-2">Keluhan: Flu Ringan & Masuk Angin</p>
+        <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
       </div>
     </div>
-    <div class="collapse mt-3" id="detail4">
-      <div class="border rounded p-3">
-        <strong>Bahan:</strong>
-      <ul>
-        <li>10 lembar daun salam segar</li>
-        <li>1 liter air</li>
-      </ul>
-      <strong>Cara membuat:</strong>
-      <p>Rebus daun salam dalam air selama ±15 menit. Gunakan airnya untuk mandi hangat atau kompres bagian tubuh yang terasa nyeri.</p>
-      <strong>Khasiat:</strong>
-      <ul>
-        <li>Mengurangi nyeri sendi dan otot akibat kelelahan</li>
-        <li>Meningkatkan relaksasi tubuh</li>
-        <li>Memiliki efek antiinflamasi ringan</li>
-      </ul>
-      <strong>Cara penggunaan:</strong>
-      <p>Gunakan setelah aktivitas berat atau sebelum tidur.</p>
-      <strong>Catatan:</strong>
-      <p>Pastikan suhu air tidak terlalu panas. Tidak untuk luka terbuka.</p>
+    <div class="d-md-none text-center mt-3">
+      <h5 class="mb-1">Wedang Jahe</h5>
+      <p>Keluhan: Flu Ringan & Masuk Angin</p>
+      <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
     </div>
-  </div>
-</div>
-
-
-  <!-- CARD 5 -->
-  <div class="mb-4 border rounded card-obat">
-    <div class="d-flex flex-md-row flex-column">
-      <img src="teh jahe.png" class="me-4 rounded" alt="Herbal E">
-      <div>
-        <h5>Wedang Jahe</h5>
-        <p>Keluhan: Flu Ringan & Masuk Angin</p>
-        <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#detail5">Lihat Selengkapnya</button>
-      </div>
-    </div>
-    <div class="collapse mt-3" id="detail5">
-      <div class="border rounded p-3">
-        <strong>Bahan:</strong>
-      <ul>
+    <div class="card-content border rounded p-3 mt-3">
+      <p class="mb-1"><strong>Bahan:</strong></p>
+      <ul class="mb-2">
         <li>2 ruas jahe segar (iris/geprek)</li>
         <li>1 batang serai (memarkan)</li>
         <li>3 lembar daun jeruk</li>
         <li>1 sdt madu</li>
         <li>300 ml air</li>
       </ul>
-      <strong>Cara membuat:</strong>
-      <p>Rebus semua bahan kecuali madu selama 10 menit. Angkat, saring, lalu tambahkan madu saat hangat. Aduk rata.</p>
-      <strong>Khasiat:</strong>
+      <p class="mb-1"><strong>Cara membuat:</strong><br>
+       Rebus semua bahan kecuali madu selama 10 menit. Angkat, saring, lalu tambahkan madu saat hangat. Aduk rata.
+      </p>
+      <p class="mb-1"><strong>Khasiat:</strong></p>
       <ul>
         <li>Menghangatkan tubuh dan mengurangi gejala flu</li>
         <li>Meredakan hidung tersumbat dan menggigil ringan</li>
         <li>Meningkatkan daya tahan tubuh secara alami</li>
       </ul>
-      <strong>Cara konsumsi:</strong>
-      <p>Minum selagi hangat, maksimal 2x sehari saat gejala muncul.</p>
-      <strong>Catatan:</strong>
-      <p>Tidak dianjurkan bagi penderita maag akut. Jangan minum bersamaan dengan obat flu kimia.</p>
+      <p class="mb-1"><strong>Cara konsumsi:</strong><br>
+      Minum selagi hangat, maksimal 2x sehari saat gejala muncul.
+      </p>
+      <p class="mb-1"><strong>Catatan:</strong><br>
+       Tidak dianjurkan bagi penderita maag akut. Jangan minum bersamaan dengan obat flu kimia.
+      </p>
     </div>
   </div>
-</div>
 
-  <!-- CARD 6 -->
-  <div class="mb-4 border rounded card-obat">
-    <div class="d-flex flex-md-row flex-column">
-      <img src="mint.png" class="me-4 rounded" alt="Herbal F">
+  <!-- CARD 5 -->
+  <div class="card p-3 mb-4">
+    <img src="daun salam.png" alt="Jeruk Peras" class="card-img-top d-md-none rounded">
+    <div class="card-horizontal d-none d-md-flex">
+      <img src="daun salam.png" alt="Jeruk Peras">
       <div>
-        <h5>Seduhan Daun Mint</h5>
-        <p>Keluhan: Cemas & Gelisah</p>
-        <button class="btn btn-outline-success btn-sm" data-bs-toggle="collapse" data-bs-target="#detail6">Lihat Selengkapnya</button>
+        <h5 class="mb-1">Rebusan Daun Salam</h5>
+        <p class="mb-2">Keluhan: Pegal-pegal</p>
+        <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
       </div>
     </div>
-    <div class="collapse mt-3" id="detail6">
-      <div class="border rounded p-3">
-        <strong>Bahan:</strong>
+    <div class="d-md-none text-center mt-3">
+      <h5 class="mb-1">Rebusan Daun Salam</h5>
+      <p>Keluhan: Pegal-pegal</p>
+      <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
+    </div>
+    <div class="card-content border rounded p-3 mt-3">
+      <p class="mb-1"><strong>Bahan:</strong></p>
+      <ul class="mb-2">
+        <li>10 lembar daun salam segar</li>
+        <li>1 liter air</li>
+      </ul>
+      <p class="mb-1"><strong>Cara membuat:</strong><br>
+       Rebus daun salam dalam air selama ±15 menit, kemudian angkat daun dan sisa kan airnya, air rebusan daun salam dapat di minum maupun dapat digunakan untuk mandi atau mengkompres bagian tubuh yang terasa nyeri.
+      </p>
+      <p class="mb-1"><strong>Khasiat:</strong></p>
       <ul>
+        <li>Mengurangi nyeri sendi dan otot akibat kelelahan</li>
+        <li>Meningkatkan relaksasi tubuh</li>
+        <li>Memiliki efek antiinflamasi ringan</li>
+      </ul>
+      <p class="mb-1"><strong>Cara konsumsi:</strong><br>
+      Gunakan setelah aktivitas berat atau sebelum tidur.
+      </p>
+      <p class="mb-1"><strong>Catatan:</strong><br>
+       Pastikan suhu air tidak terlalu panas. Tidak untuk luka terbuka.
+      </p>
+    </div>
+  </div>
+
+   <!-- CARD 6 -->
+  <div class="card p-3 mb-4">
+    <img src="mint.png" alt="Jeruk Peras" class="card-img-top d-md-none rounded">
+    <div class="card-horizontal d-none d-md-flex">
+      <img src="mint.png" alt="Jeruk Peras">
+      <div>
+        <h5 class="mb-1">Seduhan Daun Mint</h5>
+        <p class="mb-2">Keluhan: Cemas & Gelisah</p>
+        <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
+      </div>
+    </div>
+    <div class="d-md-none text-center mt-3">
+      <h5 class="mb-1">Seduhan Daun Mint</h5>
+      <p>KKeluhan: Cemas & Gelisah</p>
+      <button class="btn btn-success btn-sm" onclick="toggleContent(this)">Lihat Selengkapnya</button>
+    </div>
+    <div class="card-content border rounded p-3 mt-3">
+      <p class="mb-1"><strong>Bahan:</strong></p>
+      <ul class="mb-2">
         <li>1 genggam daun mint segar</li>
         <li>Air panas secukupnya</li>
       </ul>
-      <strong>Cara membuat:</strong>
-      <p>Cuci bersih daun mint, lalu seduh dengan air panas. Diamkan 5–7 menit, saring, dan minum saat hangat.</p>
-      <strong>Khasiat:</strong>
+      <p class="mb-1"><strong>Cara membuat:</strong><br>
+       Cuci bersih daun mint, lalu seduh dengan air panas. Diamkan 5–7 menit, saring, dan minum saat hangat.
+      </p>
+      <p class="mb-1"><strong>Khasiat:</strong></p>
       <ul>
         <li>Memberi efek menenangkan secara alami</li>
         <li>Membantu meredakan ketegangan dan stres ringan</li>
         <li>Aroma mint dapat membantu memperbaiki suasana hati</li>
       </ul>
-      <strong>Cara konsumsi:</strong>
-      <p>Diminum sore atau malam hari. Bisa dikombinasikan dengan aromaterapi mint.</p>
-      <strong>Catatan:</strong>
-      <p>Hindari konsumsi berlebihan jika memiliki gangguan lambung. Tes alergi terlebih dahulu bila baru pertama kali menggunakan daun mint segar.</p>
+      <p class="mb-1"><strong>Cara konsumsi:</strong><br>
+      Diminum sore atau malam hari. Bisa dikombinasikan dengan aromaterapi mint.
+      </p>
+      <p class="mb-1"><strong>Catatan:</strong><br>
+       Hindari konsumsi berlebihan jika memiliki gangguan lambung. Tes alergi terlebih dahulu bila baru pertama kali menggunakan daun mint segar.
+      </p>
     </div>
   </div>
-</div>
+
+
 
 </div>
 
-  <!-- Footer -->
-  <footer style="background-color: #2A8A81;" class="text-black py-4">
-    <div class="container">
-      <div class="row mt-4">
+<script>
+  function toggleContent(btn) {
+    const content = btn.closest('.card').querySelector('.card-content');
+    const isVisible = content.style.display === 'block';
+    content.style.display = isVisible ? 'none' : 'block';
+    btn.textContent = isVisible ? 'Lihat Selengkapnya' : 'Sembunyikan';
+  }
+</script>
+<!-- Footer -->
+<footer style="background-color: #2A8A81;" class="text-black py-4">
+  <div class="container">
+    <div class="row mt-">
 
-        <!-- Logo -->
-        <div class="col-md-4 mb-3 d-flex justify-content-start align-items-center">
-          <img class="mb-3" src="logo putih.png" alt="Apotek Rinjani" style="height: 130px;">
-        </div>
+      <!-- Logo -->
+      <div class="col-md-4 mb-3 d-flex justify-content-start align-items-center">
+        <img class="img-fluid" src="logo putih.png" alt="Apotek Rinjani" style="max-height: 100px;">
+      </div>
 
-        <!-- Alamat dan Jam Operasional -->
-        <div class="col-md-4 mb-3 text-white">
-          <h6>ALAMAT</h6>
-          <p class="mb-1">
-            Jl. Dr. Wahidin Sudirohusodo No.48A, Klitren,<br>
-            Kec. Gondokusuman, Kota Yogyakarta,<br>
-            Daerah Istimewa Yogyakarta 55224
-          </p>
-          <h6 class="mt-3">JAM OPERASIONAL</h6>
-          <p>
-            Senin - Sabtu: 09.00 - 20.30 WIB<br>
-            Minggu: Tutup
-          </p>
-        </div>
+      <!-- Alamat dan Jam Operasional -->
+      <div class="col-md-4 mb-3 text-white">
+        <h6>ALAMAT</h6>
+        <p class="mb-1">
+          Jl. Dr. Wahidin Sudirohusodo No.48A, Klitren,<br>
+          Kec. Gondokusuman, Kota Yogyakarta,<br>
+          Daerah Istimewa Yogyakarta 55224
+        </p><br>
+        <h6>JAM OPERASIONAL</h6>
+        <p>
+          Senin - Sabtu: 09.00 - 20.30 WIB<br>
+          Minggu: Tutup
+        </p>
+      </div>
 
-        <!-- Media Sosial -->
-        <div class="col-md-4 mb-3 text-white">
-          <h6>MEDIA SOSIAL</h6>
-          <p class="mb-1">
-            <a href="https://www.instagram.com/apotekrinjani" target="_blank" class="text-white text-decoration-none">
-              <i class="bi bi-instagram me-1"></i>Instagram: @apotekrinjani
-            </a>
-          </p>
-          <p class="mb-1">
-            <a href="https://wa.me/+6287775329959" target="_blank" class="text-white text-decoration-none">
-              <i class="bi bi-whatsapp me-1"></i>WhatsApp: +62 877-7532-9959
-            </a>
-          </p>
-          <p>
-            <a href="mailto:apotekrinjani@example.com" class="text-white text-decoration-none">
-              <i class="bi bi-envelope-fill me-1"></i>Email: apotekrinjani@example.com
-            </a>
-          </p>
-        </div>
+      <!-- Media Sosial -->
+      <div class="col-md-4 mb-3 text-white">
+        <h6>MEDIA SOSIAL</h6>
+         <p class="mb-1">
+          <a href="https://www.instagram.com/apotekrinjani" target="_blank" class="text-white text-decoration-none social-link">
+            <i class="bi bi-instagram me-1"></i>Instagram: @apotekrinjani
+          </a>
+        </p>
+        <p class="mb-1">
+          <a href="https://wa.me/123552234234234" target="_blank" class="text-white text-decoration-none social-link">
+            <i class="bi bi-whatsapp me-1"></i>WhatsApp: +62 877-7532-9959
+          </a>
+        </p>
+        <p>
+          <a href="mailto:apotekrinjani@example.com" class="text-white text-decoration-none">
+             <i class="bi bi-envelope-fill me-1"></i>Email: apotekrinjani@example.com
+          </a>
+        </p>
       </div>
     </div>
-  </footer>
+</footer>
 
-  <!-- Copyright -->
-  <div style="background-color: #2b6d65;" class="text-center text-white py-2">
-    <p class="mb-0">&copy; Copyright Apotek Rinjani 2025</p>
-  </div>
+<!-- Copyright -->
+<div style="background-color: #2b6d65;" class="text-center text-white py-2">
+  <p>&copy;Copyright Apotek Rinjani 2025</p>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
