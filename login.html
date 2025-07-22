@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Daftar | Apotek Rinjani</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #28A891;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 14px;
+      padding: 35px 30px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.08);
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #2a6e57;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus {
+      border-color: #28A891;
+      outline: none;
+    }
+
+    button {
+      background-color: #28A891;
+      color: #fff;
+      padding: 13px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #1f826f;
+    }
+
+    .toggle-link {
+      margin-top: 14px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .toggle-link a {
+      color: #e1a944;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .checkbox input {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px 20px;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN FORM -->
+  <div class="container" id="loginContainer">
+    <h2>Login ke Apotek Rinjani</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginUser">Username / Email</label>
+        <input type="text" id="loginUser" placeholder="Masukkan username atau email" />
+      </div>
+      <div class="form-group">
+        <label for="loginPass">Password</label>
+        <input type="password" id="loginPass" placeholder="Masukkan password" />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <p class="toggle-link">Belum punya akun? <a href="#" onclick="switchToSignUp()">Daftar Sekarang</a></p>
+    <p class="toggle-link"><a href="#" onclick="alert('Silakan hubungi admin untuk reset password.')">Lupa Password?</a></p>
+  </div>
+
+  <!-- SIGN UP FORM -->
+  <div class="container" id="signupContainer" style="display: none;">
+    <h2>Daftar Akun Baru</h2>
+    <form id="signupForm">
+  <div class="form-group">
+    <label for="fullName">Nama Lengkap</label>
+    <input type="text" id="fullName" placeholder="Masukkan nama lengkap" required />
+  </div>
+
+  <div class="form-group">
+    <label for="signupEmail">Email</label>
+    <input type="email" id="signupEmail" placeholder="Contoh: mitashya@rinjani.com" required />
+  </div>
+
+  <div class="form-group">
+    <label for="signupUser">Username</label>
+    <input type="text" id="signupUser" placeholder="Username unik" required />
+  </div>
+
+  <div class="form-group">
+    <label for="signupPass">Password</label>
+    <input type="password" id="signupPass" placeholder="Buat password" required />
+  </div>
+
+  <div class="form-group">
+    <label for="confirmPass">Konfirmasi Password</label>
+    <input type="password" id="confirmPass" placeholder="Ulangi password" required />
+  </div>
+
+  <div class="form-group">
+    <label for="phone">No. HP</label>
+    <input type="tel" id="phone" placeholder="Contoh: 081234567890" required />
+  </div>
+
+  <div class="form-group">
+    <label for="birthdate">Tanggal Lahir</label>
+    <input type="date" id="birthdate" required />
+  </div>
+
+  <div class="form-group">
+    <label>Jenis Kelamin</label>
+    <div class="checkbox">
+      <input type="radio" name="gender" value="Pria" id="male" />
+      <label for="male">Pria</label>
+    </div>
+    <div class="checkbox">
+      <input type="radio" name="gender" value="Wanita" id="female" />
+      <label for="female">Wanita</label>
+    </div>
+    <div class="checkbox">
+      <input type="radio" name="gender" value="Lainnya" id="other" />
+      <label for="other">Lainnya</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="origin">Asal Wilayah</label>
+    <select id="origin" required>
+      <option value="">-- Pilih Wilayah --</option>
+      <option value="jakarta">Jakarta</option>
+      <option value="bandung">Bandung</option>
+      <option value="surabaya">Surabaya</option>
+      <option value="medan">Medan</option>
+      <option value="lainnya">Lainnya</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Alamat Lengkap</label>
+    <textarea id="address" placeholder="Masukkan alamat tempat tinggal..." rows="3" required></textarea>
+  </div>
+
+  <div class="checkbox">
+    <input type="checkbox" id="news" />
+    <label for="news">Saya ingin menerima info promo Apotek Rinjani via email</label>
+  </div>
+
+  <div class="checkbox">
+    <input type="checkbox" id="terms" required />
+    <label for="terms">Saya menyetujui syarat & ketentuan</label>
+  </div>
+
+  <button type="submit">Daftar</button>
+</form>
+
+<p class="toggle-link">Sudah punya akun? <a href="#" onclick="switchToLogin()">Kembali ke Login</a></p>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function switchToSignUp() {
+      document.getElementById("loginContainer").style.display = "none";
+      document.getElementById("signupContainer").style.display = "block";
+    }
+
+    function switchToLogin() {
+      document.getElementById("signupContainer").style.display = "none";
+      document.getElementById("loginContainer").style.display = "block";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const user = document.getElementById("loginUser").value.trim();
+      const pass = document.getElementById("loginPass").value.trim();
+
+      if (!user || !pass) {
+        alert("Mohon isi semua kolom login!");
+      } else {
+        alert("Login berhasil. Mengarahkan ke halaman beranda...");
+        window.location.href = "beranda.html";
+      }
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const fullName = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const user = document.getElementById("signupUser").value.trim();
+  const pass = document.getElementById("signupPass").value.trim();
+  const confirm = document.getElementById("confirmPass").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const birthdate = document.getElementById("birthdate").value;
+  const gender = document.querySelector('input[name="gender"]:checked');
+  const origin = document.getElementById("origin").value;
+  const address = document.getElementById("address").value.trim();
+  const terms = document.getElementById("terms").checked;
+
+  if (!fullName || !email || !user || !pass || !confirm || !phone || !birthdate || !gender || !origin || !address) {
+    alert("Semua kolom wajib diisi!");
+  } else if (pass !== confirm) {
+    alert("Password dan konfirmasi tidak cocok!");
+  } else if (!terms) {
+    alert("Anda harus menyetujui syarat & ketentuan.");
+  } else {
+    alert("Pendaftaran berhasil. Mengarahkan ke halaman beranda...");
+    window.location.href = "beranda.html";
+  }
+});
+  </script>
+</body>
+</html>
