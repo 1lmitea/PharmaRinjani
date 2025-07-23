@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login & Daftar | Apotek Rinjani</title>
+  <title>Login & Daftar Akun Apotek Rinjani</title>
   <style>
     * {
       box-sizing: border-box;
@@ -149,7 +149,7 @@
 
   <div class="form-group">
     <label for="signupEmail">Email</label>
-    <input type="email" id="signupEmail" placeholder="Contoh: mitashya@rinjani.com" required />
+    <input type="email" id="signupEmail" placeholder="Contoh: alpha@rinjani.com" required />
   </div>
 
   <div class="form-group">
@@ -197,17 +197,17 @@
     <label for="origin">Asal Wilayah</label>
     <select id="origin" required>
       <option value="">-- Pilih Wilayah --</option>
+      <option value="yogyakarta">Yogyakarta</option>
       <option value="jakarta">Jakarta</option>
       <option value="bandung">Bandung</option>
       <option value="surabaya">Surabaya</option>
-      <option value="medan">Medan</option>
       <option value="lainnya">Lainnya</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="address">Alamat Lengkap</label>
-    <textarea id="address" placeholder="Masukkan alamat tempat tinggal..." rows="3" required></textarea>
+    <textarea id="address" placeholder="Masukkan alamat tempat tinggal sekarang..." rows="3" required></textarea>
   </div>
 
   <div class="checkbox">
@@ -246,7 +246,7 @@
         alert("Mohon isi semua kolom login!");
       } else {
         alert("Login berhasil. Mengarahkan ke halaman beranda...");
-        window.location.href = "beranda.html";
+        window.location.href = "index.html";
       }
     });
 
@@ -273,7 +273,7 @@
     alert("Anda harus menyetujui syarat & ketentuan.");
   } else {
     alert("Pendaftaran berhasil. Mengarahkan ke halaman beranda...");
-    window.location.href = "beranda.html";
+    window.location.href = "index.html";
   }
 });
   </script>
